@@ -41,7 +41,7 @@ if (MSVC)
     # do nothing
 else()
     file(GLOB TS_FILES translations/*.ts)
-    qt5_create_translation(QM_FILES ${TS_FILES})
+    qt_add_translation(QM_FILES ${TS_FILES})
     add_custom_target(translations DEPENDS ${QM_FILES} SOURCES ${TS_FILES})
     add_dependencies(${PROJECT_NAME} translations)
 endif ()
